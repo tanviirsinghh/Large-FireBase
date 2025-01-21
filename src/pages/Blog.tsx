@@ -17,8 +17,8 @@ export default function Blog () {
   }
   if (loading) {
     return (
-      <div>
-        <Loading />{' '}
+      <div className=' bg-black  flex justify-center items-center'>
+        <Loading />
       </div>
     )
   }
@@ -27,7 +27,7 @@ export default function Blog () {
       <div>
         <Navbar />
         <div className='h-screen flex flex-col justify-center'>
-          <div className='flex justify-center'>
+          <div className=' bg-black  flex justify-center items-center'>
             <Loading />
           </div>
         </div>

@@ -16,8 +16,8 @@ import {
   useUserDetails,
   useBlogsPersonal
 } from '../../hooks/index'
-                                            //using
-                                            
+//using
+
 import Loading from '../Loading'
 import ImageUploadHook from '../../hooks/ImageUploadHook'
 import Navbar from './Navbar'
@@ -39,8 +39,12 @@ export default function ProfileInfo () {
   })
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
   const [image, setImage] = useState<File | null>(null)
-  const [imagePreview, setImagePreview] = useState( userDetails?.profilePicture || '' )
-  const [coverImagePreview, setcoverImagePreview] = useState(userDetails?.coverpicture || '')
+  const [imagePreview, setImagePreview] = useState(
+    userDetails?.profilePicture || ''
+  )
+  const [coverImagePreview, setcoverImagePreview] = useState(
+    userDetails?.coverpicture || ''
+  )
   const [coverImage, setCoverImage] = useState<File | null>(null)
   const [confirm, setConfirm] = useState(false)
   const [load, setLoad] = useState(false)
@@ -52,18 +56,18 @@ export default function ProfileInfo () {
     totalComments: 0,
     totalLikes: 0
   })
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   useEffect(() => {
-    const authToken = localStorage.getItem('token');
+    const authToken = localStorage.getItem('token')
     if (!authToken) {
-      navigate('/signin');
-      return;
+      navigate('/signin')
+      return
     }
-    setIsAuthenticated(true);
-  }, [navigate]);
+    setIsAuthenticated(true)
+  }, [navigate])
 
   useEffect(() => {
-    if (!isAuthenticated) return;
+    if (!isAuthenticated) return
 
     const fetchStats = async () => {
       setLoading(true)
@@ -78,7 +82,6 @@ export default function ProfileInfo () {
         )
         // const data = await response.json();
         setStats(response.data)
-  
       } catch (error) {
         console.error('Error fetching stats:', error)
       } finally {
@@ -89,16 +92,16 @@ export default function ProfileInfo () {
   }, [])
 
   useEffect(() => {
-    if (!isAuthenticated) return;
+    if (!isAuthenticated) return
 
     if (userDetails) {
       setEditeduser({
-        name: userDetails.name || '',
-        email: userDetails.email || '',
-        blogName: userDetails.blogName || '',
-        bio: userDetails.bio || '',
-        location: userDetails.location || '',
-        coverpicture: userDetails.coverpicture || ''
+        name: userDetails?.name || '',
+        email: userDetails?.email || '',
+        blogName: userDetails?.blogName || '',
+        bio: userDetails?.bio || '',
+        location: userDetails?.location || '',
+        coverpicture: userDetails?.coverpicture || ''
       })
     }
   }, [userDetails])
@@ -145,14 +148,6 @@ export default function ProfileInfo () {
     return
   }
 
-  if (loading || !userDetails) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    )
-  }
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSaving(true) // Disable the button
@@ -161,15 +156,15 @@ export default function ProfileInfo () {
     try {
       // Simplified input check logic
       const payload: Partial<typeof editeduser> = {}
-      if (editeduser.name !== userDetails.name) payload.name = editeduser.name
-      if (editeduser.email !== userDetails.email)
+      if (editeduser.name !== userDetails?.name) payload.name = editeduser.name
+      if (editeduser.email !== userDetails?.email)
         payload.email = editeduser.email
-      if (editeduser.blogName !== userDetails.blogName)
+      if (editeduser.blogName !== userDetails?.blogName)
         payload.blogName = editeduser.blogName
-      if (editeduser.bio !== userDetails.bio) payload.bio = editeduser.bio
-      if (editeduser.location !== userDetails.location)
+      if (editeduser.bio !== userDetails?.bio) payload.bio = editeduser.bio
+      if (editeduser.location !== userDetails?.location)
         payload.location = editeduser.location
-      if (editeduser.coverpicture !== userDetails.coverpicture)
+      if (editeduser.coverpicture !== userDetails?.coverpicture)
         payload.coverpicture = editeduser.coverpicture
       if (Object.keys(payload).length > 0) {
         await axios.put(
@@ -280,10 +275,12 @@ export default function ProfileInfo () {
     }
   ]
 
-  if (isloading) {
+  if (loading || !userDetails) {
     return (
       <div>
-        <Loading />
+        <div className='h-screen bg-black w-full flex justify-center items-center'>
+          <Loading />
+        </div>
       </div>
     )
   }
@@ -296,7 +293,7 @@ export default function ProfileInfo () {
         <div className='relative'>
           <div className='  h-80  relative'>
             <img
-              src={coverImagePreview || userDetails.coverpicture}
+              src={coverImagePreview || userDetails?.coverpicture}
               alt='Cover'
               className='w-full h-full object-cover'
             />
@@ -400,8 +397,8 @@ export default function ProfileInfo () {
               {/* profile picture update */}
               <div className='relative group'>
                 <img // if not found image put a random image,    fix this later
-                  src={imagePreview || userDetails.profilePicture}
-                  alt={userDetails.name}
+                  src={imagePreview || userDetails?.profilePicture}
+                  alt={userDetails?.name}
                   className='w-36 h-36 rounded-full border-1 border-gray-900 shadow-xl'
                 />
                 <button
@@ -500,10 +497,10 @@ export default function ProfileInfo () {
                   <div className='flex items-start justify-start'>
                     <div>
                       <h1 className='text-3xl font-bold text-gray-300 font-mono'>
-                        {userDetails.name}
+                        {userDetails?.name}
                       </h1>
                       <p className='text-indigo-500 font-medium font-mono'>
-                        {userDetails.blogName}
+                        {userDetails?.blogName}
                       </p>
                     </div>
 
@@ -530,7 +527,7 @@ export default function ProfileInfo () {
                   </div>
 
                   <p className='mt-2 text-gray-300 font-mono max-w-2xl'>
-                    {userDetails.bio}
+                    {userDetails?.bio}
                   </p>
 
                   <div className='mt-4 flex flex-wrap items-center gap-4 text-gray-400'></div>
@@ -550,7 +547,9 @@ export default function ProfileInfo () {
               {isloading ? (
                 <div className=''>
                   {' '}
-                  <Loading />
+                  <div className=' bg-black  flex justify-center items-center'>
+                    <Loading />
+                  </div>
                 </div>
               ) : (
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
@@ -663,12 +662,7 @@ export default function ProfileInfo () {
                 </button>
               </div>
 
-              <form
-                onSubmit={
-                  handleSubmit
-                }
-                className='space-y-6'
-              >
+              <form onSubmit={handleSubmit} className='space-y-6'>
                 {/* Avatar Upload */}
                 <div className='flex items-center gap-4'></div>
 

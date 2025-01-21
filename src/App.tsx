@@ -27,7 +27,9 @@ function App () {
           <Route
             path='/signin'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={ <div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 {token ? <BoltMainPage /> : <LatestSignin />}
               </React.Suspense>
             }
@@ -35,7 +37,9 @@ function App () {
           <Route
             path='/signup'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 {token ? <BoltMainPage /> : <LatestSignupPage />}
               </React.Suspense>
             }
@@ -43,7 +47,9 @@ function App () {
          <Route
             path='/blogs'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 <BoltMainPage />
               </React.Suspense>
             }
@@ -51,7 +57,9 @@ function App () {
           <Route
             path='/blog/:id'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 <Blog /> 
                 </React.Suspense>
             }
@@ -59,7 +67,9 @@ function App () {
           <Route
             path='/authorprofile'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 <AuthorProfile />
               </React.Suspense>
             }
@@ -67,7 +77,9 @@ function App () {
           <Route
             path='/editblog/:id'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 <EditBlog />
               </React.Suspense>
             }
@@ -75,7 +87,9 @@ function App () {
           <Route
             path='/publish'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 <TextEditor />
               </React.Suspense>
             }
@@ -83,7 +97,9 @@ function App () {
           <Route
             path='/userprofile'
             element={
-              <React.Suspense fallback={<Loading />}>
+              <React.Suspense fallback={<div className=' bg-black  flex justify-center items-center'>
+                <Loading  />
+              </div>}>
                 {<UserProfileBolt /> }
               </React.Suspense>
             }

@@ -321,7 +321,11 @@ export default function BoltFullBlog ({ blog, editButton }: blogProps) {
     navigate(`/editblog/${blog.id}`, { state: { blog } })
   }
   if (isLoading) {
-    return <Loading />
+    return (
+      <div className=' bg-black  flex justify-center items-center'>
+        <Loading />
+      </div>
+    )
   }
 
   return (
@@ -464,7 +468,7 @@ export default function BoltFullBlog ({ blog, editButton }: blogProps) {
                   {comments &&
                     comments.map(comment => (
                       <Comments
-                      key={comment.id}
+                        key={comment.id}
                         id={comment.id}
                         content={comment.content}
                         timestamp={comment.timestamp}
