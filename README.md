@@ -1,30 +1,83 @@
-# React + TypeScript + Vite
+# 📖 Blog Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Welcome to the Blog Application repository! This project is a comprehensive blog platform that allows users to create, edit, delete, like, comment, and save blog posts. Users can also manage their profiles, view saved blogs, and access a dedicated author page to check their engagement stats. The application supports photo uploads and ensures secure authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **User Authentication and Authorization**
+- **Blog Post Management**
+  - 📝 Create, edit, and delete blog posts
+  - 👍 Like, 💬 comment, and 📌 save blog posts
+- **Profile Management**
+  - 👤 Edit user profiles
+- **Saved Blogs**
+  - 📂 View and manage saved blogs
+- **Author Pages**
+  - 👥 Dedicated author pages to display all posts by an author
+- **Engagement Stats**
+  - 📊 View engagement statistics such as likes and comments
+- **Photo Uploads**
+  - 🖼️ Upload and manage photos for blog posts
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **Frontend:**
+  - ⚛️ React
+  - 🌐 Tailwind CSS
+  - 📘 TypeScript
+  - 🌟 Aceternity UI
+  - ✨ Magic UI
+- **Backend:**
+  - 📝 Hono Language
+  - 🛠️ Prisma ORM
+  - 🔐 JWT (JSON Web Tokens)
+  - 🌩️ Cloudflare Workers
+  - ✅ Zod Validation
+- **Database:**
+  - 🐘 PostgreSQL
+- **Storage & CDN:**
+  - ☁️ AWS S3 Bucket
+  - 📸 Cloudinary
+- **Containerization:**
+  - 🐳 Docker
+- **Validation:**
+  - ✅ Zod
+- **Custom Tools:**
+  - 🔧 Custom NPM Package
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 🌐 Live Demo
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Check out the live demo of the project [here](https://large-75896.web.app).
+
+## 📂 Backend Repository
+
+If you are interested in the backend code, please visit the [Backend Repository](https://github.com/tanviirsinghh/latestblog-backend).
+
+## 📦 Installation
+
+To get a local copy up and running, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/tanviirsinghh/Large-FireBase.git
+
+1. Navigate to the project directory:
+
+bash
+cd Large-FireBase
+
+2. Install dependencies:
+
+bash
+npm install
+
+3.Start the development server:
+
+bash
+npm run dev
+
+
+📧 Contact
+Tanvir Singh - tanviirsinghh@gmail.com
