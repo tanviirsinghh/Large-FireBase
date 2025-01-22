@@ -23,6 +23,7 @@ import ImageUploadHook from '../../hooks/ImageUploadHook'
 import Navbar from './Navbar'
 import SavedBlogComponent from './SavedBlogComponent'
 import AuthorPosts from './AuthorPosts'
+import Footer from '../Footer';
 
 export default function ProfileInfo () {
   const { loading, userDetails, setUserDetails } = useUserDetails()
@@ -57,6 +58,8 @@ export default function ProfileInfo () {
     totalLikes: 0
   })
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const token = localStorage.getItem('token')
+
   useEffect(() => {
     const authToken = localStorage.getItem('token')
     if (!authToken) {
@@ -80,7 +83,6 @@ export default function ProfileInfo () {
             }
           }
         )
-        // const data = await response.json();
         setStats(response.data)
       } catch (error) {
         console.error('Error fetching stats:', error)
@@ -89,7 +91,7 @@ export default function ProfileInfo () {
       }
     }
     fetchStats()
-  }, [])
+  }, [token, isAuthenticated])
 
   useEffect(() => {
     if (!isAuthenticated) return
@@ -104,11 +106,19 @@ export default function ProfileInfo () {
         coverpicture: userDetails?.coverpicture || ''
       })
     }
-  }, [userDetails])
+  }, [isAuthenticated,userDetails])
+
   const handleLogout = () => {
-    localStorage.removeItem('token')
+    if (setUserDetails) setUserDetails(null);
+    if (setIsAuthenticated) setIsAuthenticated(false);
+    localStorage.clear();
+// Clear session storage
+sessionStorage.clear();
     toast.success('Logged out successfully!')
-    navigate('/signin') // Update: Use navigate instead of window.location.href
+    
+
+    navigate('/signin',{ replace: true }) 
+    window.location.reload();// Update: Use navigate instead of window.location.href
   }
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -142,7 +152,6 @@ export default function ProfileInfo () {
       toast.error('Failed to refresh user details.')
     }
   }
-  const token = localStorage.getItem('token')
   if (!token) {
     navigate('/signin')
     return
@@ -785,6 +794,7 @@ export default function ProfileInfo () {
           </div>
         )}
       </div>
+      <Footer/>
     </>
   )
 }

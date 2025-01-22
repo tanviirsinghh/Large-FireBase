@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Editor as TinyMCEEditor } from 'tinymce'
 import { Editor } from '@tinymce/tinymce-react'
 import axios from 'axios'
@@ -18,14 +18,24 @@ export default function TextEditor () {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
   const token = localStorage.getItem('token')
-  if (!token) {
-    toast.info('Log In or Create Account First')
-    navigate('/publish')
-  }
 
   const [title, setTitle] = useState('')
   const [descript, setDescript] = useState('')
   const [img, setImg] = useState<File | null>(null)
+  const titleInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (!token) {
+      toast.info('Log In or Create Account First')
+      navigate('/publish')
+      return
+    }
+    // Focus the input when component mounts
+  }, [navigate, token])
+  useEffect(() => {
+    // Focus the input when component mounts
+    titleInputRef.current?.focus()
+  }, [])
 
   const getImgFile = (file: File | null) => {
     setImg(file)
@@ -95,7 +105,7 @@ export default function TextEditor () {
 
   if (loading) {
     return (
-      <div className='h-screen w-full flex justify-center items-center'>
+      <div className='h-screen bg-black w-full flex justify-center items-center'>
         <OrbitProgress
           variant='spokes'
           color='#3e43ef'
@@ -125,6 +135,7 @@ export default function TextEditor () {
             <div className='flex justify-center items-center h-32 w-full px-4 sm:px-6 lg:px-8 '>
               <div className='w-full max-w-5xl'>
                 <input
+                  ref={titleInputRef}
                   onChange={e => {
                     setTitle(e.target.value)
                   }}
