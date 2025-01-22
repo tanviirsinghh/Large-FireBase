@@ -11,7 +11,6 @@ const useImageUploadHook = async (image : File): Promise<string | undefined> => 
     data.append('cloud_name', 'dktr9buob')
     console.log('start request')
     try {
-        console.log('Starting image upload...');
 
       const response = await axios.post(`${CLOUDINARY_URL}`, data, {
         headers: {
@@ -19,14 +18,12 @@ const useImageUploadHook = async (image : File): Promise<string | undefined> => 
         }
       })
     //   inside the imageUpload hook
-    console.log("inside the imageUploadhook")
-      console.log('complete')
+
       
       const imgurl = response.data.secure_url
        
       return imgurl
     } catch (e) {
-        console.log("error while uploading the image")
       toast.error('Error Occurred / Please Re-Upload')
       return undefined;
       

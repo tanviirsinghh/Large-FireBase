@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route,  } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
 import Loading from './components/Loading'
+import { ToastContainer } from 'react-toastify';
 const LatestSignupPage = React.lazy(() => import('./pages/LatestSignUpPage'))
 const LatestSignin = React.lazy(() => import('./components/LatestSignin'))
 const AuthorProfile = React.lazy(() => import('./components/user-profile/AuthorProfile'))
@@ -17,7 +17,7 @@ function App () {
  
   return (
     <>
-      <ToastContainer />
+        <ToastContainer/>
       <BrowserRouter>
         <Routes>
         <Route

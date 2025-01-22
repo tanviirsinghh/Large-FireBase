@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BACKEND_URL } from '../config'
 import { toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import { signinInput } from '@tanviirsinghh/medium-common'
 //using
 
@@ -117,15 +118,15 @@ const LatestSignin: React.FC = () => {
                 <input
                   type='email'
                   name='email'
-                  placeholder='your@email.com'
+                  placeholder='      your@email.com'
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 rounded-full border text-gray-300 bg-black 
+                  className={`w-full px-4 py-2  rounded-full border text-gray-300 bg-black 
                     focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 
                     ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                   required
                 />
-                <span className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-700'>
+                <span className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-300'>
                   <MailIcon />
                 </span>
                 {errors.email && (
@@ -136,7 +137,7 @@ const LatestSignin: React.FC = () => {
                 <input
                   type='password'
                   name='password'
-                  placeholder='Your Password'
+                  placeholder='      Your Password'
                   value={formData.password}
                   onChange={handleChange}
                   className={`w-full px-4 py-2 rounded-full border text-gray-300 bg-black 
@@ -144,7 +145,7 @@ const LatestSignin: React.FC = () => {
                     ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
                   required
                 />
-                <span className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-700'>
+                <span className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-300'>
                   <LockIcon />
                 </span>
                 {errors.password && (

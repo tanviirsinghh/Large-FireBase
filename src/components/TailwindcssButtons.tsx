@@ -1,4 +1,3 @@
-"use client";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { toast, Toaster  } from "sonner";
 import { ButtonsCard } from "../components/ui/tailwindcss-buttons";
