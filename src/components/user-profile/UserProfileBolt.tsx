@@ -606,23 +606,27 @@ sessionStorage.clear();
                   </div>
                 </div>
 
-                <div className='space-y-6 bg-black backdrop-blur-lg'>
-                  {blogsPersonal.map(blog => (
-                    <AuthorPosts
-                      key={blog.id}
-                      id={blog.id}
-                      authorName={blog.author.name || 'Anonymous'}
-                      title={blog.title}
-                      content={blog.content}
-                      publishDate=' save the date also and then fetch here'
-                      url={blog.url}
-                      // make user upload the photo then fetch here
-                      like={blog._count.like}
-                      comment={blog._count.comment}
-                      save={blog._count.savedPosts}
-                    />
-                  ))}
-                </div>
+                <div className='space-y-6 bg-black backdrop-blur-lg max-h-[800px] overflow-y-auto
+            scrollbar-thin
+            scrollbar-thumb-black
+            scrollbar-track-black
+            hover:scrollbar-thumb-black
+            px-4'>
+    {blogsPersonal.map(blog => (
+        <AuthorPosts
+            key={blog.id}
+            id={blog.id}
+            authorName={blog.author.name || 'Anonymous'}
+            title={blog.title}
+            content={blog.content}
+            publishDate=''
+            url={blog.url}
+            like={blog._count.like}
+            comment={blog._count.comment}
+            save={blog._count.savedPosts}
+        />
+    ))}
+</div>
               </div>
             </div>
 
@@ -794,6 +798,7 @@ sessionStorage.clear();
           </div>
         )}
       </div>
+      <div className='h-24 bg-black'></div>
       <Footer/>
     </>
   )

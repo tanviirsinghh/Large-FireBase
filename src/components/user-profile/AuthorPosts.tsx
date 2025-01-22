@@ -1,5 +1,8 @@
 import DOMPurify from 'dompurify'
 import { Link } from 'react-router-dom'
+import likeimg from '../../assets/heart.png'
+import cmtimg from '../../assets/comment.png'
+import savedimg from '../../assets/bookmark.png'    
 
 interface BlogCardProps {
   id: string
@@ -9,7 +12,6 @@ interface BlogCardProps {
   authorName: string
   like: number
   comment: number
-  // authorAvatar: string
   publishDate: string
   save: number
 }
@@ -47,15 +49,15 @@ export default function AuthorPosts ({
 
               <div className='flex items-center gap-6 mt-3'>
                 <button className='flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors'>
-                  <img className='h-5' src='/src/assets/heart.png' alt='' />
+                  <img className='h-5' src={likeimg} alt='' />
                   <span>{like}</span>
                 </button>
                 <button className='flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors'>
-                  <img className='h-6' src='/src/assets/comment.png' alt='' />
+                  <img className='h-6' src={cmtimg} alt='' />
                   <span>{comment}</span>
                 </button>
                 <button className='flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors'>
-                  <img className='h-6' src='/src/assets/bookmark.png' alt='' />
+                  <img className='h-6' src={savedimg} alt='' />
                   <span>{save}</span>
                 </button>
               </div>

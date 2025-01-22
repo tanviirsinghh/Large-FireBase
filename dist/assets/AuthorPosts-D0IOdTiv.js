@@ -1,0 +1,11 @@
+import{c as n}from"./createLucideIcon-8ZQe8nt6.js";import{j as s,L as l}from"./index-CWkEVUV4.js";import{p as m}from"./purify.es-Bq0E5Q3l.js";import{c as x,b as d}from"./bookmark-CyZZ_Zro.js";/**
+ * @license lucide-react v0.452.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=n("ChartColumn",[["path",{d:"M3 3v16a2 2 0 0 0 2 2h16",key:"c24i48"}],["path",{d:"M18 17V9",key:"2bz60n"}],["path",{d:"M13 17V5",key:"1frdt8"}],["path",{d:"M8 17v-3",key:"17ska0"}]]);/**
+ * @license lucide-react v0.452.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const f=n("TrendingUp",[["polyline",{points:"22 7 13.5 15.5 8.5 10.5 2 17",key:"126l90"}],["polyline",{points:"16 7 22 7 22 13",key:"kwv8wd"}]]),h="/assets/heart-GV4tAVOb.png";function b({id:e,title:t,content:a,url:r,like:o,comment:c,save:i}){return s.jsx(l,{to:`/blog/${e}`,children:s.jsx("div",{children:s.jsx("div",{className:"group",children:s.jsxs("div",{className:"flex gap-4 p-4 rounded-xl bg-black/90 hover:bg-black/60 transition-colors cursor-pointer",children:[s.jsx("img",{src:r,alt:t,className:"w-24 h-24 rounded-lg object-cover"}),s.jsxs("div",{className:"flex-1",children:[s.jsx("h3",{className:"text-indigo-500 font-bold font-mono  text-lg group-hover:text-indigo-500 transition-colors",children:t}),s.jsx("p",{className:"font-mono text-gray-300 text-sm mt-1 line-clamp-2",dangerouslySetInnerHTML:{__html:m.sanitize(a?a.slice(1,80)+"...":" ")}}),s.jsxs("div",{className:"flex items-center gap-6 mt-3",children:[s.jsxs("button",{className:"flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors",children:[s.jsx("img",{className:"h-5",src:h,alt:""}),s.jsx("span",{children:o})]}),s.jsxs("button",{className:"flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors",children:[s.jsx("img",{className:"h-6",src:x,alt:""}),s.jsx("span",{children:c})]}),s.jsxs("button",{className:"flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors",children:[s.jsx("img",{className:"h-6",src:d,alt:""}),s.jsx("span",{children:i})]})]})]})]})},e)})})}export{b as A,y as C,f as T};

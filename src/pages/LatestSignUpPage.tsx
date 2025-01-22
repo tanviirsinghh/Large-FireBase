@@ -5,8 +5,9 @@ import { FormEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import {  signupInput } from '@tanviirsinghh/medium-common'
+import signupimg from '../assets/modern-blogger-concept-with-flat-design_23-2147996703.jpg';
 
-
+ 
 
 const LatestSignupPage = () => {
   const navigate = useNavigate()
@@ -160,7 +161,7 @@ const [errors, setErrors] = useState<ErrorState>({});
           </h2>
           <div className=''>
             <img
-              src='src/imgs/modern-blogger-concept-with-flat-design_23-2147996703.jpg'
+              src={signupimg}
               alt='Blog '
               className='rounded-lg shadow-lg mb-6'
             />
