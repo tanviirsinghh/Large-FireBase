@@ -170,7 +170,7 @@ const [errors, setErrors] = useState<ErrorState>({});
             with the world!
           </p>
           <div className='flex justify-center space-x-4'>
-            <span className='bg-gray-300 rounded-full p-2'>
+            <span className='bg-indigo-500 rounded-full p-2'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6 text-yellow-50'
@@ -192,7 +192,7 @@ const [errors, setErrors] = useState<ErrorState>({});
                 />
               </svg>
             </span>
-            <span className='bg-gray-300 rounded-full p-2'>
+            <span className='bg-indigo-500 rounded-full p-2'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6 text-yellow-50'
@@ -208,7 +208,7 @@ const [errors, setErrors] = useState<ErrorState>({});
                 />
               </svg>
             </span>
-            <span className='bg-gray-300 rounded-full p-2'>
+            <span className='bg-indigo-500 rounded-full p-2'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6 text-yellow-50'
