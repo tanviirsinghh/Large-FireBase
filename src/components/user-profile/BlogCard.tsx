@@ -53,13 +53,13 @@ export function BlogCard ({
           </div>
 
           <h2 className='text-xl font-bold text-gray-100 mb-2 hover:text-primary transition-colors cursor-pointer'>
-            {title ? title.slice(1, 34) + '...' : ' '}
+            {title ? title.slice(0, 34) + '...' : ' '}
           </h2>
           <p
             className='text-gray-400 mb-4'
             dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(
-                content ? content.slice(1, 80) + '...' : ' '
+                content ? content.slice(0, 80) + '...' : ' '
               )
             }}
           ></p>
