@@ -464,18 +464,23 @@ export default function BoltFullBlog ({ blog, editButton }: blogProps) {
                   <div></div>
                 )}
 
-                <div className='space-y-6  h-96 overflow-scroll'>
-                  {comments &&
-                    comments.map(comment => (
-                      <Comments
-                        key={comment.id}
-                        id={comment.id}
-                        content={comment.content}
-                        timestamp={comment.timestamp}
-                        user={comment.user}
-                      />
-                    ))}
-                </div>
+{comments && comments.length > 0 ? (
+    <div className='space-y-6 h-auto  overflow-y-scroll'>
+        {comments.map(comment => (
+            <Comments
+                key={comment.id}
+                id={comment.id}
+                content={comment.content}
+                timestamp={comment.timestamp}
+                user={comment.user}
+            />
+        ))}
+    </div>
+) : (
+    <div className="text-center py-8 text-indigo-500 font-mono">
+        <p>No comments yet</p>
+    </div>
+)}
               </section>
             </main>
 
