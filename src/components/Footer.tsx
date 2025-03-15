@@ -36,7 +36,7 @@ export default function Footer () {
           <p className='text-xs text-gray-500'>
             Designed with <span className='text-red-500'>&hearts; </span> by{' '}
             <a
-              href='www.instagram.com/tanviirsinghh'
+              href=''
               target='_blank'
               className='text-indigo-400 hover:underline'
             >
